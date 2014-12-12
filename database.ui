@@ -20,6 +20,12 @@
   <property name="windowOpacity">
    <double>1.000000000000000</double>
   </property>
+  <property name="iconSize">
+   <size>
+    <width>72</width>
+    <height>72</height>
+   </size>
+  </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
@@ -29,6 +35,9 @@
      <widget class="QTableWidget" name="tableWidget">
       <property name="editTriggers">
        <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="alternatingRowColors">
+       <bool>false</bool>
       </property>
       <property name="selectionBehavior">
        <enum>QAbstractItemView::SelectRows</enum>
@@ -40,7 +49,7 @@
        <bool>true</bool>
       </property>
       <attribute name="horizontalHeaderStretchLastSection">
-       <bool>true</bool>
+       <bool>false</bool>
       </attribute>
       <column>
        <property name="text">
@@ -75,12 +84,6 @@
      <height>21</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuFile">
-    <property name="title">
-     <string>File</string>
-    </property>
-   </widget>
-   <addaction name="menuFile"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -120,6 +123,11 @@
    </property>
   </action>
   <action name="actionAdd_a_new_connection">
+   <property name="icon">
+    <iconset resource="computericon.qrc">
+     <normaloff>:/Icons/Computericon/connection_icon.jpg</normaloff>
+     <normalon>Computericon/connection_icon.jpg</normalon>:/Icons/Computericon/connection_icon.jpg</iconset>
+   </property>
    <property name="text">
     <string>Add a new connection</string>
    </property>
