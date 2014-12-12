@@ -13,12 +13,18 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        database.cpp
+        database.cpp \
+    insert.cpp \
+    minsert.cpp
 
-HEADERS  += database.h
+HEADERS  += database.h \
+    insert.h \
+    minsert.h
 
 FORMS    += database.ui \
-    dialog.ui
+    Insert.ui \
+    insert.ui \
+    minsert.ui
 
 RESOURCES += \
     computericon.qrc
