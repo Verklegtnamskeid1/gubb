@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/Icons">
+        <file>Computericon/Computer_Icon.png</file>
+        <file>Computericon/danni_bicon.png</file>
+    </qresource>
+</RCC>
