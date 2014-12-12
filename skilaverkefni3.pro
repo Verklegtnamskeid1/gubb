@@ -17,7 +17,8 @@ SOURCES += main.cpp\
 
 HEADERS  += database.h
 
-FORMS    += database.ui
+FORMS    += database.ui \
+    dialog.ui
 
 RESOURCES += \
     computericon.qrc
