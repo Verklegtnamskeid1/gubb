@@ -107,6 +107,11 @@
    </property>
   </action>
   <action name="actionAdd_a_new_person_2">
+   <property name="icon">
+    <iconset resource="computericon.qrc">
+     <normaloff>:/Icons/Computericon/lommi.png</normaloff>
+     <normalon>Computericon/lommi.png</normalon>:/Icons/Computericon/lommi.png</iconset>
+   </property>
    <property name="text">
     <string>Add a new person</string>
    </property>
