@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>546</width>
+    <width>563</width>
     <height>351</height>
    </rect>
   </property>
@@ -86,7 +86,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>546</width>
+     <width>563</width>
      <height>21</height>
     </rect>
    </property>
@@ -101,6 +101,9 @@
    <addaction name="actionAdd_a_new_computer"/>
    <addaction name="actionAdd_a_new_person_2"/>
    <addaction name="actionAdd_a_new_connection"/>
+   <addaction name="actionDelete_a_person"/>
+   <addaction name="actionDelete_a_computer"/>
+   <addaction name="actionDelete_a_connection"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionAdd_a_new_computer">
@@ -139,6 +142,21 @@
    </property>
    <property name="toolTip">
     <string>Click here to add a new connection</string>
+   </property>
+  </action>
+  <action name="actionDelete_a_person">
+   <property name="text">
+    <string>Delete a person</string>
+   </property>
+  </action>
+  <action name="actionDelete_a_computer">
+   <property name="text">
+    <string>Delete a computer</string>
+   </property>
+  </action>
+  <action name="actionDelete_a_connection">
+   <property name="text">
+    <string>Delete a connection</string>
    </property>
   </action>
  </widget>
