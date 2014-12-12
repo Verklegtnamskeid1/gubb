@@ -22,9 +22,9 @@ HEADERS  += database.h \
     minsert.h
 
 FORMS    += database.ui \
-    Insert.ui \
     insert.ui \
-    minsert.ui
+    minsert.ui \
+    insert.ui
 
 RESOURCES += \
     computericon.qrc
