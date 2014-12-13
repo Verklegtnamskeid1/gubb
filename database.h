@@ -2,7 +2,7 @@
 #define DATABASE_H
 
 #include <QMainWindow>
-
+#include "insertcomputer.h"
 namespace Ui {
 class database;
 }
@@ -30,6 +30,7 @@ private slots:
 
 private:
     Ui::database *ui;
+    Insertcomputer *insertcomp;
 };
 
 #endif // DATABASE_H

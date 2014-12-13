@@ -117,6 +117,9 @@
    <property name="toolTip">
     <string>Click here to add a new computer</string>
    </property>
+   <property name="shortcut">
+    <string>Backspace</string>
+   </property>
   </action>
   <action name="actionAdd_a_new_person_2">
    <property name="icon">

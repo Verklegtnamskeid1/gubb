@@ -2,7 +2,7 @@
 #include "ui_database.h"
 #include "insertcomputer.h"
 #include "insert.h"
-#include "insertcomputer2.h"
+
 
 database::database(QWidget *parent) :
     QMainWindow(parent),
@@ -26,10 +26,8 @@ void database::on_Search_edit_cursorPositionChanged(int arg1, int arg2)
 
 void database::on_actionAdd_a_new_computer_triggered()
 {
-    Insertcomputer icomput;
-    //icomput.setModal(true);
-    //icomput.exec();
-    icomput.show();
+   insertcomp = new Insertcomputer(this);
+   insertcomp->show();
 }
 
 void database::on_actionAdd_a_new_person_2_triggered()
