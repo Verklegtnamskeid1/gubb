@@ -15,16 +15,19 @@ TEMPLATE = app
 SOURCES += main.cpp\
         database.cpp \
     insert.cpp \
-    insertcomputer.cpp
+    insertcomputer.cpp \
+    addconnection.cpp
 
 HEADERS  += database.h \
     insert.h \
-    insertcomputer.h
+    insertcomputer.h \
+    addconnection.h
 
 FORMS    += database.ui \
     insert.ui \
     insert.ui \
-    insertcomputer.ui
+    insertcomputer.ui \
+    addconnection.ui
 
 RESOURCES += \
     computericon.qrc

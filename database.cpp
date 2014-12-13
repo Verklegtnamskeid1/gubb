@@ -2,6 +2,8 @@
 #include "ui_database.h"
 #include "insertcomputer.h"
 #include "insert.h"
+#include "addconnection.h"
+
 
 
 database::database(QWidget *parent) :
@@ -28,6 +30,7 @@ void database::on_actionAdd_a_new_computer_triggered()
 {
    insertcomp = new Insertcomputer(this);
    insertcomp->show();
+   //Hafa alla svona ef við viljum hafa að það sé hægt að hafa alla gluggana opna í einu.
 }
 
 void database::on_actionAdd_a_new_person_2_triggered()
@@ -39,7 +42,9 @@ void database::on_actionAdd_a_new_person_2_triggered()
 
 void database::on_actionAdd_a_new_connection_triggered()
 {
-
+   addconnection addcon;
+   addcon.setModal(true);
+   addcon.exec();
 }
 
 void database::on_tableWidget_activated(const QModelIndex &index)
