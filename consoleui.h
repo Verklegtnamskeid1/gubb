@@ -1,4 +1,4 @@
-#ifndef CONSOLEUI_H
+/*#ifndef CONSOLEUI_H
 #define CONSOLEUI_H
 #include "sk2data.h"
 
@@ -55,4 +55,4 @@ private:
 extern QTextStream cout;
 extern QTextStream cin;
 
-#endif // CONSOLEUI_H
+#endif // CONSOLEUI_H*/

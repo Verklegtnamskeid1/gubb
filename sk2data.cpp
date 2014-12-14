@@ -1,4 +1,4 @@
-#include "sk2data.h"
+/*#include "sk2data.h"
 // QHash<int, QHash<QString, QString> >
 sk2data::sk2data()
 {
@@ -231,3 +231,4 @@ QVector<QHash<QString, QString> > sk2data::QueryPerson(QString row,
     }
     return map;
 }
+*/

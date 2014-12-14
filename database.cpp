@@ -12,7 +12,7 @@ database::database(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->Search_edit->setPlaceholderText("Search");
-    setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
+  //  setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
 }
 
 database::~database()

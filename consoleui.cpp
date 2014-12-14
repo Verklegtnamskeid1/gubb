@@ -1,4 +1,4 @@
-#include "main.h"
+/*#include "main.h"
 #include "consoleui.h"
 
 ConsoleUI::ConsoleUI()
@@ -336,7 +336,7 @@ void ConsoleUI::AddPerson()
     {
         /* Afsakið hrokann en hér gerum við ráð fyrir því að fólk sem nær ekki að
          * að verða ársgamalt geti orðið frægt í tölvugeiranum */
-        cout << "Year born and year dead are incorrect. Please fix. " << endl << endl;
+      /*  cout << "Year born and year dead are incorrect. Please fix. " << endl << endl;
         return;
     }
 
@@ -545,3 +545,4 @@ void ConsoleUI::start()
 
     QTextStream cout(stdout);
     QTextStream cin(stdin);
+*/

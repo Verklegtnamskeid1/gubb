@@ -1,9 +1,9 @@
-#include "sqlite.h"
+/*#include "sqlite.h"
 #include <iostream>
 sqlite::sqlite()
 {
     /* Skilgreina default */
-    DefaultSort["sortby"] = QString("");
+  /*  DefaultSort["sortby"] = QString("");
     DefaultSort["sortorder"] = ASC;
     TablesDef[QString("persons")] = {"Persons_ID", "Persons_Name",
                                       "Persons_Sex","Persons_YearBorn",
@@ -14,7 +14,7 @@ sqlite::sqlite()
     TablesDef[QString("owners")] = {"Persons_ID", "Computers_ID"};
 
     /* Skilgreinir hvaða SQL dræver hún á að nota */
-    db = QSqlDatabase::addDatabase("QSQLITE");
+    /*db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("Skil2.sqlite");
 
     if (db.isValid())
@@ -39,7 +39,7 @@ QString sqlite::searchstring(QHash<QString,QString> WHAT)
     {
 
             /* Þurfum bara eitt einsog er */
-            searchstring = " WHERE UPPER(";
+      /*      searchstring = " WHERE UPPER(";
             searchstring = searchstring +  string + ") LIKE UPPER('%steve%')";
 
     }
@@ -123,7 +123,7 @@ QMap<int, QHash<QString, QString> > sqlite::query(QString TABLE,
 }
 
 /* DELETE */
-void sqlite::deleteid(QString TABLE, QString row, int id)
+/*void sqlite::deleteid(QString TABLE, QString row, int id)
 {
     if (!tables.contains(TABLE))
     {
@@ -152,7 +152,7 @@ void sqlite::deleteid(QString TABLE, QString row, int id)
 
 
 /* INSERT */
-void sqlite::insert(QString TABLE, QHash<QString, QString> insert)
+/*void sqlite::insert(QString TABLE, QHash<QString, QString> insert)
 {
     if (!tables.contains(TABLE))
     {
@@ -215,3 +215,4 @@ const QString sqlite::DESC = QString("DESC");
 
 const QStringList sqlite::tables = {"persons", "owners", "computers"};
 
+*/

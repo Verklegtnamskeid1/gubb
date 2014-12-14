@@ -1,6 +1,6 @@
-#ifndef SQLITE_H
+/*#ifndef SQLITE_H
 #define SQLITE_H
-#include <QtSql>
+//#include <QtSql>
 
 
 
@@ -44,7 +44,7 @@ private:
     * Taflan Computers er:
     * Computers_ID(int) Name(string) YearBuilt (int) Type (string) BuiltOrNot(bool)
 */
-   QSqlDatabase db;
-};
+  // QSqlDatabase db;
+//};
 
-#endif // SQLITE_H
+//#endif // SQLITE_H
