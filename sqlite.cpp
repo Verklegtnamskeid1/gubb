@@ -1,10 +1,37 @@
-/*#include "sqlite.h"
+#include "sqlite.h"
 #include <iostream>
 sqlite::sqlite()
 {
     /* Skilgreina default */
-  /*  DefaultSort["sortby"] = QString("");
+    DefaultSort["sortby"] = QString("");
     DefaultSort["sortorder"] = ASC;
+
+    tables.push_back("Persons");
+    tables.push_back("owners");
+    tables.push_back("computers");
+
+
+    QStringList pers;
+    pers.push_back("Persons_ID");
+    pers.push_back("Persons_Name");
+    pers.push_back("Persons_Sex");
+    pers.push_back("Persons_YearBorn");
+    pers.push_back("Persons_YearDeath");
+    TablesDef[QString("Persons")] = pers;
+
+    QStringList comp;
+    pers.push_back("Computers_ID");
+    pers.push_back("Computers_Name");
+    pers.push_back("Computers_YearBuilt");
+    pers.push_back("Computers_Type");
+    pers.push_back("Computers_BuiltOrNot");
+    TablesDef[QString("computers")] = comp;
+
+    QStringList own;
+    pers.push_back("Persons_ID");
+    pers.push_back("Computers_ID");
+    TablesDef[QString("owners")] = own;
+   /*
     TablesDef[QString("persons")] = {"Persons_ID", "Persons_Name",
                                       "Persons_Sex","Persons_YearBorn",
                                       "Persons_YearDeath"};
@@ -12,9 +39,9 @@ sqlite::sqlite()
                                         "Computers_YearBuilt", "Computers_Type",
                                         "Computers_Type", "Computers_BuiltOrNot"};
     TablesDef[QString("owners")] = {"Persons_ID", "Computers_ID"};
-
+*/
     /* Skilgreinir hvaða SQL dræver hún á að nota */
-    /*db = QSqlDatabase::addDatabase("QSQLITE");
+    db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("Skil2.sqlite");
 
     if (db.isValid())
@@ -31,6 +58,7 @@ sqlite::sqlite()
 
 
 }
+
 QString sqlite::searchstring(QHash<QString,QString> WHAT)
 {
     QString searchstring = "";
@@ -39,7 +67,7 @@ QString sqlite::searchstring(QHash<QString,QString> WHAT)
     {
 
             /* Þurfum bara eitt einsog er */
-      /*      searchstring = " WHERE UPPER(";
+            searchstring = " WHERE UPPER(";
             searchstring = searchstring +  string + ") LIKE UPPER('%steve%')";
 
     }
@@ -123,7 +151,7 @@ QMap<int, QHash<QString, QString> > sqlite::query(QString TABLE,
 }
 
 /* DELETE */
-/*void sqlite::deleteid(QString TABLE, QString row, int id)
+void sqlite::deleteid(QString TABLE, QString row, int id)
 {
     if (!tables.contains(TABLE))
     {
@@ -152,7 +180,7 @@ QMap<int, QHash<QString, QString> > sqlite::query(QString TABLE,
 
 
 /* INSERT */
-/*void sqlite::insert(QString TABLE, QHash<QString, QString> insert)
+void sqlite::insert(QString TABLE, QHash<QString, QString> insert)
 {
     if (!tables.contains(TABLE))
     {
@@ -215,4 +243,3 @@ const QString sqlite::DESC = QString("DESC");
 
 const QStringList sqlite::tables = {"persons", "owners", "computers"};
 
-*/
