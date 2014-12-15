@@ -29,7 +29,7 @@ QSqlDatabase BaseRepository::getDatabaseConnection()
         database.open();
 
         //Turn foreign key check on
-        QSqlQuery query;
+        QSqlQuery query(database);
         query.exec("PRAGMA FOREIGN_KEYS = ON");
     }
 
