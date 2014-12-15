@@ -87,3 +87,14 @@ void database::on_Search_edit_textChanged(const QString &arg1)
 {
 
 }
+
+void database::displayCurrentPersons() {
+    ui->personTableWidget->setRowCount(currentPersons.size());
+    ui->personTableWidget->clearContents();
+    for (unsigned int i = 0; i < currentPersons.size(); i++) {
+        ui->personTableWidget->setItem(i, 0, new QTableWidgetItem(QString::fromStdString(currentPersons[i].getName())));
+        ui->personTableWidget->setItem(i, 1, new QTableWidgetItem(QString::fromStdString(currentPersons[i].getBirthyear())));
+        ui->personTableWidget->setItem(i, 2, new QTableWidgetItem(QString::fromStdString(currentPersons[i].getDeathyear())));
+        ui->personTableWidget->setItem(i, 3, new QTableWidgetItem(QString::fromStdString(currentPersons[i].getGender())));
+    }
+}

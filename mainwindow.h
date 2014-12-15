@@ -1,22 +1,41 @@
-//#ifndef MAINWINDOW_H
-//#define MAINWINDOW_H
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
 
-//#include <QMainWindow>
+#include <QMainWindow>
 
-//namespace Ui {
-//class MainWindow;
-//}
+namespace Ui {
+class MainWindow;
+}
 
-//class MainWindow : public QMainWindow
-//{
-//    Q_OBJECT
+class MainWindow : public QMainWindow
+{
+    Q_OBJECT
 
-//public:
-//    explicit MainWindow(QWidget *parent = 0);
-//    ~MainWindow();
+public:
+    explicit MainWindow(QWidget *parent = 0);
+    ~MainWindow();
 
-//private:
-//    Ui::MainWindow *ui;
-//};
+private:
 
-//#endif // MAINWINDOW_H
+    void getAllPersons();
+    void getAllComputers();
+    void getALlConnections();
+
+    Ui::MainWindow *ui;
+};
+
+void MainWindow::getAllPersons()
+{
+
+}
+void getAllComputers()
+{
+
+}
+void getALlConnections()
+{
+
+}
+
+
+#endif // MAINWINDOW_H
