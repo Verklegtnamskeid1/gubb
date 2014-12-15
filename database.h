@@ -28,13 +28,12 @@ private slots:
 
     void on_tableWidget_activated(const QModelIndex &index);
 
-<<<<<<< HEAD
+
     void on_treeWidget_activated(const QModelIndex &index);
 
     void on_Search_edit_textChanged(const QString &arg1);
     void displayCurrentPersons();
-=======
->>>>>>> 5cfc50f5c398a82a87b7a14850528912e8e67d5c
+
 private:
     Ui::database *ui;
     Insertcomputer *insertcomp;
