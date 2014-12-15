@@ -25,7 +25,7 @@ database::~database()
 {
     delete ui;
 }
-database::start()
+void database::start()
 {
 
     scienceservice.open();
