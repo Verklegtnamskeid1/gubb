@@ -13,13 +13,13 @@ database::database(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->Search_edit->setPlaceholderText("Search");
-<<<<<<< HEAD
+
     getAllScientis
     //  setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
 
-=======
+
   //  setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
->>>>>>> 5cfc50f5c398a82a87b7a14850528912e8e67d5c
+
 }
 
 database::~database()
@@ -54,7 +54,7 @@ void database::displayCurrentPersons()
     }
 }
 
-=======
+
 
 void database::on_Search_edit_cursorPositionChanged(int arg1, int arg2)
 {
@@ -62,7 +62,7 @@ void database::on_Search_edit_cursorPositionChanged(int arg1, int arg2)
 }
 
 
->>>>>>> 5cfc50f5c398a82a87b7a14850528912e8e67d5c
+
 void database::on_actionAdd_a_new_computer_triggered()
 {
    insertcomp = new Insertcomputer(this);
@@ -86,11 +86,10 @@ void database::on_actionAdd_a_new_connection_triggered()
 
 void database::on_tableWidget_activated(const QModelIndex &index)
 {
-<<<<<<< HEAD
+
 
  }
 
-=======
->>>>>>> 5cfc50f5c398a82a87b7a14850528912e8e67d5c
+
 
 
