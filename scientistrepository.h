@@ -1,13 +1,14 @@
 #ifndef SCIENTISTREPOSITORY_H
 #define SCIENTISTREPOSITORY_H
+#include <QtSql>
 
 #include "scientist.h"
 #include "baserepository.h"
 #include <stdexcept>
 #include <iostream>
 
-class Scientistrepository : public Baserepository
-{
+class ScientistRepository : public BaseRepository{
+
 public:
     ScientistRepository();
     ~ScientistRepository();

@@ -39,7 +39,7 @@ public:
 
 private:
     ScientistRepository scientistRepository;
-    ComputerRepository computerRepository;
+    computerrepository computerRepository;
     ScientistComputerConnectionsRepository scientistComputerConnectionsRepository;
 };
 

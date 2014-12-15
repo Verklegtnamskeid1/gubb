@@ -1,13 +1,14 @@
 #include "computerrepository.h"
+#include <Qtsql>
 
-ComputerRepository::ComputerRepository() {
+computerrepository::computerrepository() {
     createConnection();
 }
 
-ComputerRepository::~ComputerRepository() {
+computerrepository::~computerrepository() {
 }
 
-void ComputerRepository::add(Computer computer) {
+void computerrepository::add(Computer computer) {
 
     QSqlQuery query(db);
     query.prepare("INSERT INTO Computers (Name, YearBuilt, Type, WasBuilt) VALUES (:name,:yb,:type,:wb)");
@@ -19,7 +20,7 @@ void ComputerRepository::add(Computer computer) {
     query.exec();
 }
 
-void ComputerRepository::remove(std::string id) {
+void computerrepository::remove(std::string id) {
     QSqlQuery query(db);
 
     query.prepare("DELETE FROM Computers WHERE id = :id");
@@ -34,11 +35,11 @@ void ComputerRepository::remove(std::string id) {
     query.exec();
 }
 
-std::list<Computer> ComputerRepository::list() {
+std::list<Computer> computerrepository::list() {
     return list("","");
 }
 
-std::list<Computer> ComputerRepository::list(std::string col, std::string mod) {
+std::list<Computer> computerrepository::list(std::string col, std::string mod) {
     std::list<Computer> computerList = std::list<Computer>();
 
     QSqlQuery query(db);
@@ -57,7 +58,7 @@ std::list<Computer> ComputerRepository::list(std::string col, std::string mod) {
 
 }
 
-std::list<Computer> ComputerRepository::search(std::string searchTerm) {
+std::list<Computer> computerrepository::search(std::string searchTerm) {
     // Naive search implementation, finds a substring in the name field
     std::list<Computer> computerList = std::list<Computer>();
 
@@ -72,7 +73,7 @@ std::list<Computer> ComputerRepository::search(std::string searchTerm) {
     return computerList;
 }
 
-void ComputerRepository::populateComputerList(std::list<Computer> &computerList, QSqlQuery query){
+void computerrepository::populateComputerList(std::list<Computer> &computerList, QSqlQuery query){
     while(query.next()){
         Computer c = Computer();
         c.setId(query.value("ID").toInt());

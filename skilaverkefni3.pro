@@ -12,6 +12,7 @@ TARGET = skilaverkefni3
 TEMPLATE = app
 
 
+
 SOURCES += main.cpp\
         database.cpp \
     insert.cpp \

@@ -3,15 +3,17 @@
 
 #include "baserepository.h"
 #include "computer.h"
+#include <list>
 
 #include <stdexcept>
 #include <iostream>
+#include <QtSql>
+using namespace std;
 
-class ComputerRepository : public BaseRepository
-{
+class computerrepository : public BaseRepository{
 public:
-    ComputerRepository();
-    ~ComputerRepository();
+    computerrepository();
+    ~computerrepository();
 
     void add(Computer);
     void remove(std::string id);
