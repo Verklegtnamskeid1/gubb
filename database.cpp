@@ -28,7 +28,7 @@ database::~database()
 int database::start()
 {
 
-    scienceservice.open();
+    // scienceservice.open();
 
 }
 
