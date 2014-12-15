@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -17,18 +17,33 @@ SOURCES += main.cpp\
     insert.cpp \
     insertcomputer.cpp \
     addconnection.cpp \
+    baserepository.cpp \
+    computer.cpp \
+    computerrepository.cpp \
     consoleui.cpp \
-    sk2data.cpp \
-    sqlite.cpp
+    mainwindow.cpp \
+    scienceservice.cpp \
+    scientist.cpp \
+    scientistcomputerconnections.cpp \
+    scientistcomputerconnectionsrepository.cpp \
+    scientistrepository.cpp
 
 HEADERS  += database.h \
     insert.h \
     insertcomputer.h \
     addconnection.h \
+    baserepository.h \
+    computer.h \
+    computerrepository.h \
     consoleui.h \
     main.h \
-    sk2data.h \
-    sqlite.h
+    mainwindow.h \
+    menus.h \
+    scienceservice.h \
+    scientist.h \
+    scientistcomputerconnections.h \
+    scientistcomputerconnectionsrepository.h \
+    scientistrepository.h
 
 FORMS    += database.ui \
     insert.ui \

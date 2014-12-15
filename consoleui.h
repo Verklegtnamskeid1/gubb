@@ -1,58 +1,39 @@
-/*#ifndef CONSOLEUI_H
+#ifndef CONSOLEUI_H
 #define CONSOLEUI_H
-#include "sk2data.h"
 
-struct searchdef
-{
-    int sort;
-    int sortby;
+#include "Scientist.h"
+#include "computer.h"
+#include <stack>
+#include <list>
+#include <cstdlib>
+#include <iostream>
+#include <string>
+#include "menus.h"
+#include <stdexcept>
+#include <sstream>
+#include "scienceservice.h"
 
-    searchdef(int sortget, int sortbyget):
-        sort(sortget),
-        sortby(sortbyget)
-    {}
-    searchdef()
-    {}
-};
-
-class ConsoleUI
-{
+// Display layer for the console application
+class ConsoleUI {
 public:
     ConsoleUI();
-    void start();
+    ~ConsoleUI();
+    int start();
 private:
-    void List();
-    void Search();
-    void AddPerson();
-    void Print(QVector<QHash<QString, QString> > buffer);
-    void Delete();
-
-    bool SearchASC();
-
-    sk2data gogn;
-
-    void quitmsg();
-    QString DefineSearch();
-    void ComputerConnection();
-    void PersonConnection();
-    void AddConnection();
-    void AddComputer();
-    void Add();
-    void ListPerson(QString searchrow = "", QString searchfor = "");
-    void ListComputer(QString searchrow = "", QString searchfor = "");
-    void ListConnection(QString searchrow = "", QString searchfor = "");
-    void DeletePerson(int deleteID);
-    void DeleteComputer(int deleteID);
-    void DeleteConnection(int deleteID);
-    void SearchPerson();
-    void SearchComputer();
-    void SearchConnection();
-    QString DefineSearchPersons();
-    QString DefineSearchComputer();
-    QString DefineSearchConnection();
+    ScienceService scienceService;
+    void clear();
+    void waitForPrompt();
+    int respondToMessage();
+    void handleAddScientist();
+    void handleAddComputer();
+    void handleAddConnection();
+    void handleDeleteScientist();
+    void handleDeleteComputer();
+    void handleDeleteConnection();
+    void handleSearchScientist();
+    void handleSearchComputer();
+    void handleFilterScientist();
+    void handleFilterComputer();
 };
 
-extern QTextStream cout;
-extern QTextStream cin;
-
-#endif // CONSOLEUI_H*/
+#endif // CONSOLEUI_H
