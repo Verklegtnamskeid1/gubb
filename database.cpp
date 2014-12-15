@@ -25,7 +25,6 @@ database::~database()
 {
     delete ui;
 }
-<<<<<<< HEAD
 database::start()
 {
 
