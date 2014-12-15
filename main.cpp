@@ -1,8 +1,7 @@
-#include "main.h"
 #include "consoleui.h"
 #include "database.h"
 #include <QApplication>
-
+#include "ConsoleUI.h"
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -11,9 +10,10 @@ int main(int argc, char *argv[])
 
     return a.exec();
 
-   /* ConsoleUI ui = ConsoleUI();
-    ui.start();
 
-    return 0;
-*/
+    ConsoleUI ui = ConsoleUI();
+
+    return ui.start();
+}
+
 }
