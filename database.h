@@ -28,9 +28,11 @@ private slots:
 
     void on_tableWidget_activated(const QModelIndex &index);
 
+
     void on_treeWidget_activated(const QModelIndex &index);
 
     void on_Search_edit_textChanged(const QString &arg1);
+    void displayCurrentPersons();
 
 private:
     Ui::database *ui;
