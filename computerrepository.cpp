@@ -1,5 +1,5 @@
 #include "computerrepository.h"
-#include <Qtsql>
+#include <QtSql>
 
 computerrepository::computerrepository() {
     createConnection();
