@@ -14,7 +14,6 @@ database::database(QWidget *parent) :
     ui->setupUi(this);
     ui->Search_edit->setPlaceholderText("Search");
 
-    getAllScientis
     //  setCentralWidget(ui->tableWidget);  //setur þannig að tablewidget tekur mest alt plássið
 
 
