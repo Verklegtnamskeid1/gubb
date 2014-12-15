@@ -13,6 +13,7 @@ class database : public QMainWindow
 
 public:
     explicit database(QWidget *parent = 0);
+    int start();
     ~database();
 
 private slots:
