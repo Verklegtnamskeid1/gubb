@@ -17,7 +17,6 @@ SOURCES += main.cpp\
     insert.cpp \
     insertcomputer.cpp \
     addconnection.cpp \
-    baserepository.cpp \
     computer.cpp \
     computerrepository.cpp \
     consoleui.cpp \
@@ -26,7 +25,8 @@ SOURCES += main.cpp\
     scientist.cpp \
     scientistcomputerconnections.cpp \
     scientistcomputerconnectionsrepository.cpp \
-    scientistrepository.cpp
+    scientistrepository.cpp \
+    baserepository.cpp
 
 HEADERS  += database.h \
     insert.h \

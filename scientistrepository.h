@@ -1,12 +1,13 @@
 #ifndef SCIENTISTREPOSITORY_H
 #define SCIENTISTREPOSITORY_H
 
-#include "Scientist.h"
+#include "scientist.h"
 #include "baserepository.h"
 #include <stdexcept>
 #include <iostream>
 
-class ScientistRepository : public BaseRepository{
+class Scientistrepository : public Baserepository
+{
 public:
     ScientistRepository();
     ~ScientistRepository();
