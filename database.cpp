@@ -38,6 +38,7 @@ database::start()
   /*  //    fileToolBar = addToolBar(tr("File"));
         fileToolBar->addAction(newAct);
 }*/
+/*
 void database::displayCurrentPersons()
 {
    std::string search = ui->Search_edit->text().toStdString();
@@ -52,7 +53,7 @@ void database::displayCurrentPersons()
         ui->display_all->setItem(i, 3, new QTableWidgetItem(QString::fromStdString(currentPersons[i].getGender())));
     }
 }
-
+*/
 
 
 void database::on_Search_edit_cursorPositionChanged(int arg1, int arg2)
