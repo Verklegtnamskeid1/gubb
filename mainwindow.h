@@ -1,7 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
+/*#include <QMainWindow>
 
 namespace Ui {
 class MainWindow;
@@ -39,3 +39,4 @@ void getALlConnections()
 
 
 #endif // MAINWINDOW_H
+*/

@@ -1,8 +1,8 @@
 #ifndef SCIENCESERVICE_H
 #define SCIENCESERVICE_H
 
-#include "Scientist.h"
-#include "ScientistRepository.h"
+#include "scientist.h"
+#include "scientistrepository.h"
 #include "computer.h"
 #include "computerrepository.h"
 #include "scientistcomputerconnections.h"

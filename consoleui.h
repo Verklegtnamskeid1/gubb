@@ -1,7 +1,7 @@
 #ifndef CONSOLEUI_H
 #define CONSOLEUI_H
 
-#include "Scientist.h"
+#include "scientist.h"
 #include "computer.h"
 #include <stack>
 #include <list>
