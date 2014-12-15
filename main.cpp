@@ -1,7 +1,7 @@
 #include "consoleui.h"
 #include "database.h"
 #include <QApplication>
-#include "consoleUI.h"
+#include "consoleui.h"
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
