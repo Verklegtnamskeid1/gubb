@@ -61,6 +61,8 @@ private slots:
 
     void on_checkBox_Persons_StillAlive_clicked();
 
+    void on_actionRemove_all_connection_from_triggered();
+
 private:
     QString _delete_id;
     bool asc = true;

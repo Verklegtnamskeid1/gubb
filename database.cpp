@@ -41,7 +41,6 @@ void database::resizeEvent(QResizeEvent* event)
     ui->frame_computers->move(ui->tableWidget->x(),ui->tableWidget->y());
     ui->frame_computers->resize(ui->tableWidget->width(), ui->tableWidget->height());
 
-    ui->connectText->move(0, this->height() - (ui->connectText->height() + 20));
 
 }
 
@@ -328,11 +327,14 @@ void database::on_actionConnect_triggered()
         {
             _need_connect = 1;
             _connect_person_id = ui->tableWidget->selectionModel()->selectedRows().value(0).data().toInt();
-
+            dialog("Now select a computer.");
+            fillComputerTable();
         }
         else{
             _connect_computer_id = ui->tableWidget->selectionModel()->selectedRows().value(0).data().toInt();
            _need_connect = 0;
+           dialog("Now select a person.");
+           fillPersonTable();
         }
 
         }
@@ -349,10 +351,17 @@ void database::on_actionConnect_triggered()
             _need_connect = -1;
             ScientistComputerConnections newConn;
 
-            std::string cid = "" + _connect_computer_id;
-            std::string sid = "" + _connect_person_id;
+            std::string cid = QString::number(_connect_computer_id).toStdString();
+            std::string sid = QString::number(_connect_person_id).toStdString();
+            qDebug() << _connect_computer_id;
             scienceService.addConnection(sid, cid );
 
+            dialog("How anoying of you");
+            if (currentView == 0) fillPersonTable();
+            else
+            {
+                fillComputerTable();
+            }
         }
     }
 }
@@ -387,7 +396,7 @@ void database::fillPersonTable(bool all){
 
     ui->tableWidget->clearContents();
     QStringList personheader;
-    personheader << "ID"  << "Name" << "Gender" << "Year born" << "Year dead" << "Owns";
+    personheader << "ID"  << "Name" << "Gender" << "Year born" << "Year dead" << "Built";
     ui->tableWidget->setColumnCount(6);
 
     ui->tableWidget->setHorizontalHeaderLabels(personheader);
@@ -626,5 +635,53 @@ void database::on_checkBox_Persons_StillAlive_clicked()
     else
     {
         ui->line_Persons_whendied->show();
+    }
+}
+
+void database::on_actionRemove_all_connection_from_triggered()
+{
+    ui->frame->resize(this->width(), ui->frame->height());
+
+    if (ui->tableWidget->selectionModel()->selectedRows().count() != 1)
+    {
+        dialog("Sorry you need to select A ROW.");
+
+    }
+    else
+    {
+        if (currentView == 0)
+        {
+            int person_id = ui->tableWidget->selectionModel()->selectedRows().value(0).data().toInt();
+            dialog("Uhh ok!");
+            std::list<Computer> owns;
+            std::string sid = QString::number(person_id).toStdString();
+            owns = scienceService.getAllComputersByScientistId(sid);
+            QString ownstext;
+            for(std::list<Computer>::iterator iterown = owns.begin(); iterown != owns.end(); iterown ++)
+            {
+               std::string cid = QString::number(iterown->getId()).toStdString();
+               scienceService.removeConnection(sid,cid);
+            }
+            fillPersonTable();
+
+
+        }
+        else{
+            int computer_id = ui->tableWidget->selectionModel()->selectedRows().value(0).data().toInt();
+           dialog("OK.");
+
+           std::list<Scientist> owns;
+           std::string cid = QString::number(computer_id).toStdString();
+           owns = scienceService.getAllScientistsByComputerId(cid);
+           QString ownstext;
+           for(std::list<Scientist>::iterator iterown = owns.begin(); iterown != owns.end(); iterown ++)
+           {
+              std::string sid = QString::number(iterown->getId()).toStdString();
+              scienceService.removeConnection(sid,cid);
+           }
+           fillComputerTable();
+
+
+        }
     }
 }
