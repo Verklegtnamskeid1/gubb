@@ -77,6 +77,8 @@ private:
     void cleartable();
     void personstable();
     void computerstable();
+    void fillConnectionTable(bool all = true);
+
     void fillComputerTable(bool all = true);
     void fillPersonTable(bool all = true);
 

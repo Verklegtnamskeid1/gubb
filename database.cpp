@@ -387,8 +387,8 @@ void database::fillPersonTable(bool all){
 
     ui->tableWidget->clearContents();
     QStringList personheader;
-    personheader << "ID"  << "Name" << "Gender" << "Year born" << "Year dead";
-    ui->tableWidget->setColumnCount(5);
+    personheader << "ID"  << "Name" << "Gender" << "Year born" << "Year dead" << "Owns";
+    ui->tableWidget->setColumnCount(6);
 
     ui->tableWidget->setHorizontalHeaderLabels(personheader);
     ui->tableWidget->setColumnHidden(0, true);
@@ -412,12 +412,24 @@ void database::fillPersonTable(bool all){
 
            QTableWidgetItem *icon_item = new QTableWidgetItem;
            // icon_item->setIcon(icon);
+           std::list<Computer> owns;
+           owns = scienceService.getAllComputersByScientistId(QString::number(iter->getId()).toStdString());
+           QString ownstext;
+           int a = 0;
+           for(std::list<Computer>::iterator iterown = owns.begin(); iterown != owns.end(); iterown ++)
+           {
+                if (a != 0) ownstext = ownstext + ", ";
+                ownstext = ownstext + QString::fromStdString(iterown->getName()) + "  ";
+                a++;
+           }
 
            ui->tableWidget->setItem(counter, 0, new QTableWidgetItem(QString::number(iter->getId())));
            ui->tableWidget->setItem(counter, 1, new QTableWidgetItem(QString::fromStdString(iter->getName())));
            ui->tableWidget->setItem(counter, 2, new QTableWidgetItem(gender));
            ui->tableWidget->setItem(counter, 3, new QTableWidgetItem(QString::fromStdString(iter->getDateOfBirth())));
            ui->tableWidget->setItem(counter, 4, new QTableWidgetItem(yeardead));
+           ui->tableWidget->setItem(counter, 5, new QTableWidgetItem(ownstext));
+
            counter++;
         }
     ui->tableWidget->setRowCount(counter);
@@ -428,8 +440,8 @@ void database::fillComputerTable(bool all){
 
     ui->tableWidget->clearContents();
     QStringList computerheader;
-    computerheader << "ID" << "Name" << "Year built" << "Type" << "Was it built?";
-    ui->tableWidget->setColumnCount(5);
+    computerheader << "ID" << "Name" << "Year built" << "Type" << "Was it built?" << "Owners";
+    ui->tableWidget->setColumnCount(6);
 
     ui->tableWidget->setColumnHidden(0, true);
     ui->tableWidget->setHorizontalHeaderLabels(computerheader);
@@ -448,15 +460,27 @@ void database::fillComputerTable(bool all){
 
 
     for(std::list<Computer>::iterator iter = currentComputer.begin(); iter != currentComputer.end(); iter ++) {
+        std::list<Scientist> owns;
+        owns = scienceService.getAllScientistsByComputerId(QString::number(iter->getId()).toStdString());
+        QString ownstext;
+        int a = 0;
+        for(std::list<Scientist>::iterator iterown = owns.begin(); iterown != owns.end(); iterown ++)
+        {
+            if (a != 0) ownstext = ownstext + ", ";
+
+             ownstext = ownstext + QString::fromStdString(iterown->getName()) + "  ";
+             a++;
+        }
+
             QString wasbuilt;
             if (QString::number(iter->getWasBuilt()) == "1")
                  wasbuilt = "Yes";
             else
                 wasbuilt = "No";
 
-            int a = iter->getType();
+            int d = iter->getType();
             QString machinetype;
-            switch(a)
+            switch(d)
             {
                 case 0:
                     machinetype = "Electronics";
@@ -482,6 +506,8 @@ void database::fillComputerTable(bool all){
            ui->tableWidget->setItem(counter2, 2, new QTableWidgetItem(QString::fromStdString(iter->getYearBuilt())));
            ui->tableWidget->setItem(counter2, 3, new QTableWidgetItem(machinetype));
            ui->tableWidget->setItem(counter2, 4, new QTableWidgetItem(wasbuilt));
+           ui->tableWidget->setItem(counter2, 5, new QTableWidgetItem(ownstext));
+
            counter2++;
     }
         ui->tableWidget->setRowCount(counter2);
@@ -508,7 +534,7 @@ void database::on_treeView_clicked(const QModelIndex &index)
     {
         fillPersonTable();
     }
-    else
+    else if (root.row() == 1)
     {
         fillComputerTable();
     }

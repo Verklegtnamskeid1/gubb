@@ -13,11 +13,13 @@
      QStringList rows = data.split(QString(":"));
      QStringList persons;
      QStringList computer;
+     QStringList connection;
      persons << "Persons";
      computer << "Computer";
 
      setupModelData(persons, rootItem);
      setupModelData(computer, rootItem);
+
 
 
 
