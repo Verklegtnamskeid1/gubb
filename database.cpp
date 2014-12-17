@@ -106,27 +106,8 @@ int database::start()
 
 }
 
-//void database::createToolBars()
-  //  {
-  /*  //    fileToolBar = addToolBar(tr("File"));
-        fileToolBar->addAction(newAct);
-}*/
-/*
-void database::displayCurrentPersons()
-{
-   std::string search = ui->Search_edit->text().toStdString();
-   std::list<Scientist> s = ScienceService.searchScientist(search);
-    ui->display_all->setRowCount(s.size());
-    ui->display_all->setColumnCount(4);
 
-        for (unsigned int i = 0; i < currentPersons.size(); i++) {
-        ui->display_all->setItem(i, 0, new QTableWidgetItem(QString::fromStdString(currentPersons[i].getName())));
-       ui->display_all->setItem(i, 1, new QTableWidgetItem(QString::fromStdString(currentPersons[i].getBirthyear())));
-       ui->display_all->setItem(i, 2, new QTableWidgetItem(QString::fromStdString(currentPersons[i].getDeathyear())));
-        ui->display_all->setItem(i, 3, new QTableWidgetItem(QString::fromStdString(currentPersons[i].getGender())));
-    }
-}
-*/
+
 
 
 
