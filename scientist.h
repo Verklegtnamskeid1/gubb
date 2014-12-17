@@ -2,6 +2,7 @@
 #define SCIENTIST_H
 
 #include <string>
+#include <QVariant>
 
 // DTO for scientists
 class Scientist {
@@ -20,15 +21,21 @@ public:
     std::string getDateOfDeath() const;
     void setDateOfDeath(const std::string &value);
 
-    std::string getGender() const;
-    void setGender(const std::string &value);
+   int getGender() const;
+    void setGender(const int &value);
+
+    QVariant getBlob() const;
+    void setBlob(const QVariant &value);
+
 
 private:
     int id;
     std::string name;
     std::string dateOfBirth;
     std::string dateOfDeath;
-    std::string gender;
+    int gender;
+    QVariant blob;
+
 };
 
 #endif // SCIENTIST_H

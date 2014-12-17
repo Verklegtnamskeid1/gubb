@@ -4,7 +4,18 @@ Scientist::Scientist() {
     name = "";
     dateOfBirth = "";
     dateOfDeath = "";
-    gender = "";
+    gender = 0;
+
+}
+
+QVariant Scientist::getBlob() const
+{
+    return blob;
+}
+
+void Scientist::setBlob(const QVariant &value)
+{
+    blob = value;
 }
 
 std::string Scientist::getName() const
@@ -34,12 +45,12 @@ void Scientist::setDateOfDeath(const std::string &value)
 {
     dateOfDeath = value;
 }
-std::string Scientist::getGender() const
+int Scientist::getGender() const
 {
     return gender;
 }
 
-void Scientist::setGender(const std::string &value)
+void Scientist::setGender(const int &value)
 {
     gender = value;
 }

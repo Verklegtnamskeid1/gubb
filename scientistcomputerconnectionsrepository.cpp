@@ -65,7 +65,7 @@ void ScientistComputerConnectionsRepository::populateScientistList(std::list<Sci
         s.setName(query.value("Name").toString().toStdString());
         s.setDateOfBirth(query.value("DateOfBirth").toString().toStdString());
         s.setDateOfDeath(query.value("DateOfDeath").toString().toStdString());
-        s.setGender(query.value("Gender").toString().toStdString());
+        s.setGender(query.value("Gender").toInt());
 
         scientistList.push_back(s);
     }

@@ -13,11 +13,13 @@ ScientistRepository::~ScientistRepository() {
 void ScientistRepository::add(Scientist scientist) {
 
     QSqlQuery query(db);
+    QString gender;
+
     query.prepare("INSERT INTO Scientists (Name, DateOfBirth, DateOfDeath, Gender) VALUES (:name,:dob,:dod,:gender)");
     query.bindValue(":name",    QString::fromStdString(scientist.getName()));
     query.bindValue(":dob",     QString::fromStdString(scientist.getDateOfBirth()));
     query.bindValue(":dod",     QString::fromStdString(scientist.getDateOfDeath()));
-    query.bindValue(":gender",  QString::fromStdString(scientist.getGender()));
+    query.bindValue(":gender",  QString::number(scientist.getGender()));
 
     query.exec();
 }
@@ -82,7 +84,9 @@ void ScientistRepository::populateScientistList(std::list<Scientist> &scientistL
         s.setName(query.value("Name").toString().toStdString());
         s.setDateOfBirth(query.value("DateOfBirth").toString().toStdString());
         s.setDateOfDeath(query.value("DateOfDeath").toString().toStdString());
-        s.setGender(query.value("Gender").toString().toStdString());
+        s.setGender(query.value("Gender").toInt());
+
+        s.setBlob( query.value("Pic"));
 
         scientistList.push_back(s);
     }

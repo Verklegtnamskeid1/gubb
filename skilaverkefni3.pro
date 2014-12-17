@@ -20,14 +20,14 @@ SOURCES += main.cpp\
     addconnection.cpp \
     computer.cpp \
     computerrepository.cpp \
-    consoleui.cpp \
-    mainwindow.cpp \
     scienceservice.cpp \
     scientist.cpp \
     scientistcomputerconnections.cpp \
     scientistcomputerconnectionsrepository.cpp \
     scientistrepository.cpp \
-    baserepository.cpp
+    baserepository.cpp \
+    treeitem.cpp \
+    treemodel.cpp
 
 HEADERS  += database.h \
     insert.h \
@@ -36,15 +36,15 @@ HEADERS  += database.h \
     baserepository.h \
     computer.h \
     computerrepository.h \
-    consoleui.h \
     main.h \
-    mainwindow.h \
     menus.h \
     scienceservice.h \
     scientist.h \
     scientistcomputerconnections.h \
     scientistcomputerconnectionsrepository.h \
-    scientistrepository.h
+    scientistrepository.h \
+    treeitem.h \
+    treemodel.h
 
 FORMS    += database.ui \
     insert.ui \
@@ -56,4 +56,5 @@ RESOURCES += \
     computericon.qrc
 
 OTHER_FILES += \
-    ../Skil3gui/Skilaverkefni-numer2/Skil2.sqlite
+    ../Skil3gui/Skilaverkefni-numer2/Skil2.sqlite \
+    style.css

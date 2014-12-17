@@ -5,4 +5,7 @@
         <file>Computericon/lommi.png</file>
         <file>Computericon/connection_icon.jpg</file>
     </qresource>
+    <qresource prefix="/CSS">
+        <file>style.css</file>
+    </qresource>
 </RCC>
